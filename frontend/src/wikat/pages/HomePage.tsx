@@ -1,7 +1,13 @@
+import Footer from '../../ui/Footer'
+import Navbar from '../../ui/Navbar'
+import DiscoverBreed from '../components/DiscoverBreed'
+
 export default function HomePage() {
   return (
-    <div>
-      <h1 className="text-3xl">Hello World</h1>
-    </div>
+    <>
+      <Navbar />
+      <DiscoverBreed />
+      {/* <Footer /> */}
+    </>
   )
 }
