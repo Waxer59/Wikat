@@ -4,7 +4,8 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage:{
-        "discoverCat": "url('/images/discoverCat.png')"
+        "discoverCat": "url('/images/discoverCat.png')",
+        "loupeIcon": "url('/images/loupeIcon.svg')",
       }
     }
   },
