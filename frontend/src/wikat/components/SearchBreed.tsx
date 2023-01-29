@@ -1,7 +1,7 @@
 export default function SearchBreed() {
   return (
-    <div className="bg-black bg-right bg-discoverCat bg-cover bg-no-repeat sm:p-[100px] p-[20px] w-full rounded-t-[42px]">
-      <div className="flex flex-col gap-[25px] max-w-1/2 w-[90%] mx-auto justify-center h-full">
+    <div className="bg-black bg-bottom bg-discoverCat bg-cover bg-no-repeat sm:h-[550px] p-[5px] h-[200px] w-full rounded-t-[42px]">
+      <div className="flex flex-col gap-[25px] max-w-1/2 w-[90%] justify-center h-full pl-[40px]">
         <div className="text-white sm:text-[64px] text-[14px] flex flex-col max-w-[90%] gap-[7px] w-1/2">
           <div className="flex items-center flex-no-wrap gap-[5px]">
             <span>
@@ -21,7 +21,7 @@ export default function SearchBreed() {
               </svg>
             </div>
           </div>
-          <p className="text-white sm:text-[24px] text-[10px] max-w-[70%]">
+          <p className="text-white sm:text-[24px] text-[10px]">
             Get to know more about your cat breed
           </p>
         </div>
@@ -31,7 +31,7 @@ export default function SearchBreed() {
             placeholder={
               window.innerWidth > 900 ? 'Enter your breed' : 'Search'
             }
-            className="outline-none placeholder:text-black sm:placeholder:text-[18px] placeholder:text-[12px] sm:p-[15px] p-[7px] rounded-[59px] w-[50%] bg-loupeIcon bg-no-repeat bg-[95%] bg-[length:20px]"
+            className="outline-none placeholder:text-black sm:placeholder:text-[18px] placeholder:text-[12px] sm:p-[15px] p-[7px] rounded-[59px] w-[50%] bg-loupeIcon bg-no-repeat bg-[95%] sm:bg-[length:20px] bg-[length:10px]"
           />
         </div>
       </div>

@@ -7,12 +7,12 @@ export default function SearchedBreeds() {
         <span className="relative sm:text-[18px] text-[12px] pb-[8px] after:border-b-[3px] after:border-black after:content-[''] after:bottom-0 after:left-0 after:h-[50%] after:absolute after:w-[35%] mb-[46px] inline-block">
           Most Searched Breeds
         </span>
-        <div className="flex mb-[46px] justify-between">
+        <div className="flex mb-[46px] justify-between gap-[15px]">
           <h2 className="sm:text-[48px] text-[18px] font-bold">
             X+ Breeds For you to discover
           </h2>
 
-          <button className="flex items-center text-[18px] gap-[10px] text-[#29150799] cursor-pointer mt-auto font-bold hidden sm:inline sm:flex">
+          <button className="flex items-center text-[18px] gap-[10px] text-[#29150799] cursor-pointer font-bold hidden sm:inline sm:flex">
             SEE MORE <AiOutlineArrowRight />
           </button>
         </div>
