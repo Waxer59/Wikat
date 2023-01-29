@@ -2,28 +2,60 @@ import { AiOutlineArrowRight } from 'react-icons/ai'
 
 export default function SearchedBreeds() {
   return (
-    <div className="h-[550px] bg-[#E3E1DC] rounded-b-[42px] w-full">
-      <div className="max-w-1/2 w-[90%] mx-auto h-full pt-[40px]">
-        <span className="relative text-[18px] pb-[8px] after:border-b-[3px] after:border-black after:content-[''] after:bottom-0 after:left-0 after:h-[50%] after:absolute after:w-[35%] mb-[46px] inline-block">
+    <div className="p-[20px] bg-[#E3E1DC] rounded-b-[42px] w-full">
+      <div className="max-w-1/2 w-[90%] mx-auto h-full sm:pt-[40px] pt-[0px]">
+        <span className="relative sm:text-[18px] text-[12px] pb-[8px] after:border-b-[3px] after:border-black after:content-[''] after:bottom-0 after:left-0 after:h-[50%] after:absolute after:w-[35%] mb-[46px] inline-block">
           Most Searched Breeds
         </span>
         <div className="flex mb-[46px] justify-between">
-          <h2 className="text-[48px] font-bold">
+          <h2 className="sm:text-[48px] text-[18px] font-bold">
             X+ Breeds For you to discover
           </h2>
 
-          <button className="flex items-center text-[18px] gap-[10px] text-[#29150799] cursor-pointer mt-auto font-bold">
+          <button className="flex items-center text-[18px] gap-[10px] text-[#29150799] cursor-pointer mt-auto font-bold hidden sm:inline sm:flex">
             SEE MORE <AiOutlineArrowRight />
           </button>
         </div>
-        <ul className="flex gap-[50px]">
-          <li className="flex flex-col gap-[20px]">
+        <ul className="flex sm:gap-[50px] gap-[15px] flex-wrap justify-evenly">
+          <li className="flex flex-col sm:gap-[20px] gap-[12px]">
             <img
               src="images/discoverCat.png"
               alt=""
-              className="w-[220px] h-[220px] rounded-[24px]"
+              className="sm:w-[220px] w-[130px] sm:h-[220px] h-[130px] rounded-[24px]"
             />
-            <span className="font-bold text-[18px]">Bengal</span>
+            <span className="font-bold sm:text-[18px] text-[12px]">Bengal</span>
+          </li>
+          <li className="flex flex-col sm:gap-[20px] gap-[12px]">
+            <img
+              src="images/discoverCat.png"
+              alt=""
+              className="sm:w-[220px] w-[130px] sm:h-[220px] h-[130px] rounded-[24px]"
+            />
+            <span className="font-bold sm:text-[18px] text-[12px]">Bengal</span>
+          </li>
+          <li className="flex flex-col sm:gap-[20px] gap-[12px]">
+            <img
+              src="images/discoverCat.png"
+              alt=""
+              className="sm:w-[220px] w-[130px] sm:h-[220px] h-[130px] rounded-[24px]"
+            />
+            <span className="font-bold sm:text-[18px] text-[12px]">Bengal</span>
+          </li>
+          <li className="flex flex-col sm:gap-[20px] gap-[12px]">
+            <img
+              src="images/discoverCat.png"
+              alt=""
+              className="sm:w-[220px] w-[130px] sm:h-[220px] h-[130px] rounded-[24px]"
+            />
+            <span className="font-bold sm:text-[18px] text-[12px]">Bengal</span>
+          </li>
+          <li className="flex flex-col sm:gap-[20px] gap-[12px]">
+            <img
+              src="images/discoverCat.png"
+              alt=""
+              className="sm:w-[220px] w-[130px] sm:h-[220px] h-[130px] rounded-[24px]"
+            />
+            <span className="font-bold sm:text-[18px] text-[12px]">Bengal</span>
           </li>
         </ul>
       </div>

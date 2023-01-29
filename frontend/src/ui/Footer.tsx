@@ -2,7 +2,7 @@ import { BsGithub } from 'react-icons/bs'
 
 export default function Footer() {
   return (
-    <div className="mt-[100px] bg-black w-full rounded-t-[42px] p-[30px] flex justify-between text-white items-center">
+    <div className="mt-[100px] bg-black w-full rounded-t-[42px] p-[30px] flex sm:justify-between text-white items-center sm:flex-row flex-col gap-[15px]">
       <div className="text-[24px] font-normal flex items-center justify-start">
         Wi<strong>kat</strong>
         <svg

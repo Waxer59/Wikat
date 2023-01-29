@@ -6,6 +6,11 @@ module.exports = {
       backgroundImage:{
         "discoverCat": "url('/images/discoverCat.png')",
         "loupeIcon": "url('/images/loupeIcon.svg')",
+      },
+      screens:{
+        "mds": {
+          "raw": "(min-width: 900px)"
+        }
       }
     }
   },
