@@ -49,14 +49,6 @@ export default function SearchedBreeds() {
             />
             <span className="font-bold sm:text-[18px] text-[12px]">Bengal</span>
           </li>
-          <li className="flex flex-col sm:gap-[20px] gap-[12px]">
-            <img
-              src="images/discoverCat.png"
-              alt=""
-              className="sm:w-[220px] w-[130px] sm:h-[220px] h-[130px] rounded-[24px]"
-            />
-            <span className="font-bold sm:text-[18px] text-[12px]">Bengal</span>
-          </li>
         </ul>
       </div>
     </div>
