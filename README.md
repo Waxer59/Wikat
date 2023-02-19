@@ -11,3 +11,9 @@ Wikat is an online resource dedicated to cat breed information. Here, you will f
 - [React-router-dom](https://reactrouter.com/en/main)
 - [Tailwindcss](https://tailwindcss.com/)
 - [React icons](https://react-icons.github.io/react-icons/)
+
+### Backend
+
+- [Nestjs](https://nestjs.com/)
+- [Swagger](https://swagger.io)
+- [Redis](https://redis.io/)

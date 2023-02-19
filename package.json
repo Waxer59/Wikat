@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "workspaces": [
-    "frontend/"
+    "frontend/",
+    "backend/"
   ],
   "scripts": {
     "build": "turbo run build",
@@ -28,6 +29,9 @@
   "packageManager": "yarn@1.22.19",
   "lint-staged": {
     "frontend/*.{ts,tsx,js,jsx}": [
+      "eslint --fix"
+    ],
+    "backend/*.ts": [
       "eslint --fix"
     ],
     "*.{ts,tsx,js,jsx,html,css,md}": [
