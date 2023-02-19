@@ -17,7 +17,7 @@ export default function SearchedBreeds() {
           </button>
         </div>
         <ul className="flex sm:gap-[50px] gap-[15px] flex-wrap justify-evenly">
-          <li className="flex flex-col sm:gap-[20px] gap-[12px]">
+          <li className="flex flex-col sm:gap-[20px] gap-[12px] z-[100] relative after:bg-[#DEC68B] after:w-[45px] after:h-[174px] after:left-[-15px] after:mt-[20px] after:absolute after:z-[-1] after:content-[''] after:rounded-[15px]">
             <img
               src="images/discoverCat.png"
               alt=""
