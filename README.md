@@ -61,4 +61,6 @@ yarn dev
 - [Nestjs](https://nestjs.com/)
 - [Swagger](https://swagger.io)
 - [Redis](https://redis.io/)
+- [Redis Commander](https://github.com/joeferner/redis-commander)
 - [Docker Compose](https://docs.docker.com/compose/)
+- [Axios](https://axios-http.com/docs/intro)
