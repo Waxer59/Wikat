@@ -5,7 +5,21 @@ services:
     container_name: wikat_cache
     restart: always
     image: redis:alpine
+    command: >
+          --requirepass ${REDIS_PASSWORD}
     ports:
-      - 6379:6379
+      - ${REDIS_PORT}:6379
     volumes: 
       - ./redis:/data
+  redis-commander:
+    container_name: redis-commander
+    hostname: redis-commander
+    image: ghcr.io/joeferner/redis-commander:latest
+    restart: always
+    environment:
+    - REDIS_HOST=redis
+    - REDIS_PORT=6379
+    - REDIS_PASSWORD=${REDIS_PASSWORD}
+    - REDIS_USERNAME=${REDIS_USERNAME}
+    ports:
+    - "8081:8081"
