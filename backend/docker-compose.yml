@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+  redis:
+    container_name: wikat_cache
+    restart: always
+    image: redis:alpine
+    ports:
+      - 6379:6379
+    volumes: 
+      - ./redis:/data
