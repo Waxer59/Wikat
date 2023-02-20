@@ -16,7 +16,7 @@ export class CatService {
 
   async getBreedPhotos(breed: string, limit: number) {
     return await this.http.get(
-      `/images/search?limit=${limit}&breed_ids=${breed}`,
+      `/images/search?limit=${limit}&breed_ids=${breed}&has_breeds=0`,
     );
   }
 }
