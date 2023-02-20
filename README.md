@@ -55,6 +55,7 @@ yarn dev
 - [React-router-dom](https://reactrouter.com/en/main)
 - [Tailwindcss](https://tailwindcss.com/)
 - [React icons](https://react-icons.github.io/react-icons/)
+- [React TanStack Query](https://tanstack.com/query/latest/docs/react/overview)
 
 ### Backend
 
