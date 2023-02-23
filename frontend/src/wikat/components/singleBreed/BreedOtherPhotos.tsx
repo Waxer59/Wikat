@@ -1,4 +1,4 @@
-interface BreedOtherPhotos {
+interface BreedOtherPhotosInterface {
   width: number
   height: number
   name: string
@@ -10,7 +10,7 @@ export const BreedOtherPhotos = ({
   height,
   name,
   url
-}: BreedOtherPhotos) => {
+}: BreedOtherPhotosInterface) => {
   return (
     <li>
       <img

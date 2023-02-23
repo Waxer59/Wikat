@@ -19,7 +19,7 @@ export default function Footer() {
       </div>
       <div className="color-white flex items-center gap-[5px]">
         Created by
-        <a href="https://github.com/Waxer59" target="_blank">
+        <a href="https://github.com/Waxer59" target="_blank" rel="noreferrer">
           <BsGithub />
         </a>
       </div>

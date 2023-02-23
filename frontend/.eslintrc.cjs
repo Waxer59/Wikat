@@ -5,12 +5,23 @@ module.exports = {
   },
   extends: ['plugin:react/recommended', 'standard-with-typescript', 'prettier'],
   ignorePatterns: ['vite.config.ts'],
-  parser: '@typescript-eslint/parser',
   overrides: [],
   parserOptions: {
+    parser: '@typescript-eslint/parser',
     ecmaVersion: 'latest',
-    sourceType: 'module'
+    sourceType: 'module',
+    project: ['./tsconfig.json'],
+    tsconfigRootDir: __dirname
   },
   plugins: ['react'],
-  rules: {}
+  rules: {
+    'react/react-in-jsx-scope': 'off',
+    '@typescript-eslint/explicit-function-return-type': 'off',
+    '@typescript-eslint/restrict-template-expressions': 'off'
+  },
+  settings: {
+    react: {
+      version: 'detect'
+    }
+  }
 }

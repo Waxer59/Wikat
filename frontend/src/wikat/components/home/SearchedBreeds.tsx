@@ -1,7 +1,7 @@
 import { AiOutlineArrowRight } from 'react-icons/ai'
 import { SingleSearchedBreed } from './SingleSearchedBreed'
 import { getCatData } from '../../../api/catsApi'
-import { Breed } from '../../../common/interfaces/catApiResponseInterface'
+import { type Breed } from '../../../common/interfaces/catApiResponseInterface'
 import { useQuery } from '@tanstack/react-query'
 
 export default function SearchedBreeds() {
@@ -26,7 +26,7 @@ export default function SearchedBreeds() {
           </button>
         </div>
         <ul className="flex sm:gap-[50px] gap-[15px] flex-wrap justify-evenly">
-          {breedData.data &&
+          {breedData?.data != null &&
             breedData.data.map(({ breeds, url }, i: number) => (
               <SingleSearchedBreed
                 key={url}

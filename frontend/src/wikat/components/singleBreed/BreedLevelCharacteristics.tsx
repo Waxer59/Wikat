@@ -1,4 +1,4 @@
-interface BreedLevelCharacteristics {
+interface BreedLevelCharacteristicsInterface {
   levelBars: JSX.Element
   characteristic: string
 }
@@ -6,7 +6,7 @@ interface BreedLevelCharacteristics {
 export const BreedLevelCharacteristics = ({
   levelBars,
   characteristic
-}: BreedLevelCharacteristics): JSX.Element => {
+}: BreedLevelCharacteristicsInterface): JSX.Element => {
   return (
     <li className="flex items-center relative">
       <strong>{characteristic}:</strong> {levelBars}

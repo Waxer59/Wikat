@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom'
 import {
-  BreedElement,
-  BreedPhoto
+  type BreedElement,
+  type BreedPhoto
 } from '../../../common/interfaces/catApiResponseInterface'
 import { BreedLevelCharacteristics } from './BreedLevelCharacteristics'
 import { BreedOtherPhotos } from './BreedOtherPhotos'
@@ -102,7 +102,7 @@ export default function Breed() {
         <div className="font-[600] text-[36px] mt-[80px]">
           <h3>Other photos</h3>
           <ul className="flex gap-[46px] mt-[40px] mb-[177px] flex-wrap justify-center 3xl:justify-start">
-            {breedOtherPhotos.data &&
+            {breedOtherPhotos?.data != null &&
               breedOtherPhotos.data.map(
                 ({ url, id, width, height }: BreedPhoto) => (
                   <BreedOtherPhotos
@@ -110,7 +110,7 @@ export default function Breed() {
                     height={height}
                     width={width}
                     url={url}
-                    name={breedData!.data!.name}
+                    name={breedData?.data?.name ?? ''}
                   />
                 )
               )}
