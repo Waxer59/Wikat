@@ -19,6 +19,8 @@ const BREED_LEVEL_CHARACTERISTICS = [
   'Stranger friendly'
 ]
 
+const DEFAULT_LEVEL_BARS = 5
+
 interface BreedData extends BreedElement {
   url: string
   width: string
@@ -48,7 +50,6 @@ export default function Breed() {
   )
 
   const levelBars = (level: number = 0): JSX.Element => {
-    const DEFAULT_LEVEL_BARS = 5
     return (
       <ul className={`left-[171px] absolute flex gap-[8px]`}>
         {Array.from({ length: DEFAULT_LEVEL_BARS }).map((_, i) => (
