@@ -14,7 +14,6 @@ import { CommonModule } from './common/common.module';
   imports: [
     ConfigModule.forRoot(),
     CacheModule.registerAsync<CacheModuleAsyncOptions>({
-      isGlobal: true,
       inject: [ConfigService],
       imports: [ConfigModule],
       useFactory: async (configService: ConfigService) => {
@@ -31,6 +30,7 @@ import { CommonModule } from './common/common.module';
           store: store as unknown as CacheStore,
         };
       },
+      isGlobal: true,
     }),
     CachingModule,
     CatModule,

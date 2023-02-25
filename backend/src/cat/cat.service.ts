@@ -1,13 +1,18 @@
 import { Injectable } from '@nestjs/common';
 import { AxiosAdapter } from '../common/adapters/axios.adapter';
 import { Breed } from '../common/interfaces/catApiResponse.interface';
+import { CachingService } from '../caching/caching.service';
 
 @Injectable()
 export class CatService {
-  constructor(private readonly http: AxiosAdapter) {}
+  constructor(
+    private readonly http: AxiosAdapter,
+    private readonly cache: CachingService,
+  ) {}
 
   async getBreed(breed: string): Promise<Breed> {
-    return await this.http.get(`/images/search?breed_ids=${breed}`);
+    const breeData = await this.http.get(`/images/search?breed_ids=${breed}`);
+    return breeData as Breed;
   }
 
   async getBreeds(limit: number) {

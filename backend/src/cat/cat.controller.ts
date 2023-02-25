@@ -1,12 +1,21 @@
-import { Controller, Get, Param, ParseIntPipe, Query } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Param,
+  ParseIntPipe,
+  Query,
+  UseInterceptors,
+} from '@nestjs/common';
 import { ApiProperty, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { CatService } from './cat.service';
+import { CacheInterceptor } from '@nestjs/common/cache';
 
 @Controller('cat')
 @ApiTags('Cat')
 export class CatController {
   constructor(private readonly catService: CatService) {}
   @Get('breed/:breed')
+  @UseInterceptors(CacheInterceptor)
   @ApiResponse({
     status: 200,
     description: 'Single breed information',
@@ -17,6 +26,7 @@ export class CatController {
   }
 
   @Get('breedPhotos/:breed')
+  @UseInterceptors(CacheInterceptor)
   @ApiProperty()
   @ApiResponse({
     status: 200,
@@ -35,6 +45,7 @@ export class CatController {
     status: 200,
     description: 'Breeds information',
   })
+  @UseInterceptors(CacheInterceptor)
   getBreeds(@Query('limit', ParseIntPipe) limit: number) {
     return this.catService.getBreeds(limit);
   }
