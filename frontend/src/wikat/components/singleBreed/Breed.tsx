@@ -72,7 +72,7 @@ export default function Breed() {
               width={breedData?.data?.width}
               height={breedData?.data?.height}
               alt={`${breedData?.data?.name} photo`}
-              className="sm:w-[370px] w-full sm:h-[370px] h-full rounded-[24px]"
+              className="sm:w-[370px] w-full sm:h-[370px] h-full rounded-[24px] object-cover"
             />
           </div>
           <div>
@@ -100,7 +100,7 @@ export default function Breed() {
             </ul>
           </div>
         </div>
-        <div className="font-[600] text-[36px] mt-[80px]">
+        <div className="font-[600] text-[36px] mt-[80px] min-h-[900px]">
           <h3>Other photos</h3>
           <ul className="flex gap-[46px] mt-[40px] mb-[177px] flex-wrap justify-center 3xl:justify-start">
             {breedOtherPhotos?.data != null &&

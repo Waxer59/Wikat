@@ -1,5 +1,4 @@
-import Footer from '../../ui/Footer'
-import Navbar from '../../ui/Navbar'
+import { Footer, Navbar } from '../../ui/'
 import DiscoverBreed from '../components/home/DiscoverBreed'
 import HaveACat from '../components/home/HaveACat'
 

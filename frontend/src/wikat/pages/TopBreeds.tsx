@@ -1,12 +1,13 @@
 import { Footer, Navbar } from '../../ui/'
-import Breed from '../components/singleBreed/Breed'
 
-export default function SingleBreed() {
+const TopBreeds = () => {
   return (
     <>
       <Navbar />
-      <Breed />
+      <TopBreeds />
       <Footer />
     </>
   )
 }
+
+export default TopBreeds

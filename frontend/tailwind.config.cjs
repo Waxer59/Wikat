@@ -9,7 +9,8 @@ module.exports = {
       },
       colors:{
         "filled-level-bar": "#544439",
-        "non-filled-level-bar": "#E0E0E0"
+        "non-filled-level-bar": "#E0E0E0",
+        "topBreeds": "#291507"
       },
       screens: {
         mds: {

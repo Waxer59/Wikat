@@ -3,6 +3,7 @@ import { SingleSearchedBreed } from './SingleSearchedBreed'
 import { getCatData } from '../../../api/catsApi'
 import { type Breed } from '../../../common/interfaces/catApiResponseInterface'
 import { useQuery } from '@tanstack/react-query'
+import { Link } from 'react-router-dom'
 
 export default function SearchedBreeds() {
   const breedData = useQuery<Breed[]>(
@@ -21,9 +22,11 @@ export default function SearchedBreeds() {
             66+ Breeds For you to discover
           </h2>
 
-          <button className="flex items-center text-[18px] gap-[10px] text-[#29150799] cursor-pointer font-bold hidden sm:inline sm:flex">
+          <Link
+            to={'/topBreeds'}
+            className="flex items-center text-[18px] gap-[10px] text-[#29150799] cursor-pointer font-bold hidden sm:inline sm:flex">
             SEE MORE <AiOutlineArrowRight />
-          </button>
+          </Link>
         </div>
         <ul className="flex sm:gap-[50px] gap-[15px] flex-wrap justify-evenly">
           {breedData?.data != null &&
