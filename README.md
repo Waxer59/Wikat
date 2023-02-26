@@ -2,6 +2,8 @@
 
 Wikat is an online resource dedicated to cat breed information. Here, you will find detailed descriptions of each breed's features, including appearance, personality, and care requirements. The page also includes high-quality images so you can see each breed's appearance. Wikat is the perfect source for those interested in learning more about cats and finding the perfect breed for them.
 
+The api being used in the project is [the cat api](https://thecatapi.com/)
+
 # How to run the proyect
 
 ## 1. Configure the project
@@ -56,6 +58,8 @@ yarn dev
 - [Tailwindcss](https://tailwindcss.com/)
 - [React icons](https://react-icons.github.io/react-icons/)
 - [React TanStack Query](https://tanstack.com/query/latest/docs/react/overview)
+- [Headless UI](https://headlessui.com/)
+- [Use debounce](https://github.com/xnimorz/use-debounce#readme)
 
 ### Backend
 

@@ -11,13 +11,15 @@
     "lint": "eslint \"{src,test}/**/*.{ts,tsx}\" --fix"
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.12",
     "@tanstack/query-sync-storage-persister": "^4.24.9",
     "@tanstack/react-query": "^4.24.9",
     "@tanstack/react-query-persist-client": "^4.24.9",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.7.1",
-    "react-router-dom": "^6.7.0"
+    "react-router-dom": "^6.7.0",
+    "use-debounce": "^9.0.3"
   },
   "devDependencies": {
     "@tanstack/react-query-devtools": "^4.24.9",

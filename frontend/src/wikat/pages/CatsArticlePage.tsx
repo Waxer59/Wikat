@@ -1,6 +1,6 @@
 import { Footer, Navbar } from '../../ui'
 
-export const CatsArticle = () => {
+export default function CatsArticlePage() {
   return (
     <>
       <Navbar />
@@ -8,5 +8,3 @@ export const CatsArticle = () => {
     </>
   )
 }
-
-export default CatsArticle

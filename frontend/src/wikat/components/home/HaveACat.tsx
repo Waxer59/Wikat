@@ -13,7 +13,7 @@ export default function HaveACat() {
           chemicals in your body which lower your stress and anxiety levels
         </p>
         <Link
-          to={'/haveACat'}
+          to={'/catsarticle'}
           className="flex items-center sm:text-[18px] text-[12px] gap-[10px] text-[#29150799] cursor-pointer font-bold sm:mt-[65px] mt-[25px]">
           SEE MORE <AiOutlineArrowRight />
         </Link>

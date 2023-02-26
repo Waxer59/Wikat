@@ -1,3 +1,5 @@
+import SearchInput from './SearchInput'
+
 export default function SearchBreed() {
   return (
     <div className="bg-black bg-bottom bg-discoverCat bg-cover bg-no-repeat sm:h-[550px] p-[5px] h-[200px] w-full rounded-t-[42px]">
@@ -25,14 +27,8 @@ export default function SearchBreed() {
             Get to know more about your cat breed
           </p>
         </div>
-        <div className="sm:text-[18px] text-[12px]">
-          <input
-            type="text"
-            placeholder={
-              window.innerWidth > 900 ? 'Enter your breed' : 'Search'
-            }
-            className="outline-none placeholder:text-black sm:placeholder:text-[18px] placeholder:text-[12px] sm:p-[15px] p-[7px] rounded-[59px] w-[50%] bg-loupeIcon bg-no-repeat bg-[95%] sm:bg-[length:20px] bg-[length:10px]"
-          />
+        <div className="sm:text-[18px] text-[12px] w-[50%] relative bg-white rounded-[24px]">
+          <SearchInput />
         </div>
       </div>
     </div>

@@ -1,6 +1,6 @@
-import TopBreeds from './TopBreeds'
+import TopBreedsPage from './TopBreedsPage'
 import HomePage from './HomePage'
-import SingleBreed from './SingleBreed'
-import CatsArticle from './CatsArticle'
+import SingleBreedPage from './SingleBreedPage'
+import CatsArticlePage from './CatsArticlePage'
 
-export { TopBreeds, HomePage, SingleBreed, CatsArticle }
+export { TopBreedsPage, HomePage, SingleBreedPage, CatsArticlePage }

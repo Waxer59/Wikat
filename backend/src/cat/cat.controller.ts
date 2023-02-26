@@ -9,6 +9,7 @@ import {
 import { ApiProperty, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { CatService } from './cat.service';
 import { CacheInterceptor } from '@nestjs/common/cache';
+import { ParseOptionalIntPipe } from '../common/pipes/parse-optional-int.pipe';
 
 @Controller('cat')
 @ApiTags('Cat')
@@ -39,14 +40,30 @@ export class CatController {
     return this.catService.getBreedPhotos(breed, limit);
   }
 
+  @Get('breedsImages')
+  @ApiProperty()
+  @ApiResponse({
+    status: 200,
+    description: 'Breeds images',
+  })
+  @UseInterceptors(CacheInterceptor)
+  getBreedsImages(
+    @Query('limit', ParseOptionalIntPipe) limit?: number,
+    @Query('info') info = '1',
+  ) {
+    return this.catService.getBreedsImages(limit, info);
+  }
+
   @Get('breeds')
   @ApiProperty()
   @ApiResponse({
     status: 200,
     description: 'Breeds information',
   })
-  @UseInterceptors(CacheInterceptor)
-  getBreeds(@Query('limit', ParseIntPipe) limit: number) {
-    return this.catService.getBreeds(limit);
+  getBreeds(
+    @Query('limit', ParseOptionalIntPipe) limit,
+    @Query('filter') filterName = '',
+  ) {
+    return this.catService.getBreeds(limit ?? '', filterName);
   }
 }

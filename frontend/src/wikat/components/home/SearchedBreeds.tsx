@@ -7,10 +7,9 @@ import { Link } from 'react-router-dom'
 
 export default function SearchedBreeds() {
   const breedData = useQuery<Breed[]>(
-    ['breeds'],
-    async () => await getCatData('/cat/breeds?limit=4')
+    ['breedsImages'],
+    async () => await getCatData('/cat/breedsImages?limit=4')
   )
-
   return (
     <div className="p-[20px] bg-[#E3E1DC] rounded-b-[42px] w-full">
       <div className="max-w-1/2 w-[90%] mx-auto h-full sm:pt-[40px] pt-[0px]">
@@ -23,7 +22,7 @@ export default function SearchedBreeds() {
           </h2>
 
           <Link
-            to={'/topBreeds'}
+            to={'/topbreeds'}
             className="flex items-center text-[18px] gap-[10px] text-[#29150799] cursor-pointer font-bold hidden sm:inline sm:flex">
             SEE MORE <AiOutlineArrowRight />
           </Link>

@@ -4,8 +4,7 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        discoverCat: "url('/images/discoverCat.png')",
-        loupeIcon: "url('/images/loupeIcon.svg')"
+        discoverCat: "url('/images/discoverCat.png')"
       },
       colors:{
         "filled-level-bar": "#544439",

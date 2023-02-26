@@ -71,7 +71,7 @@ export default function Breed() {
               src={breedData?.data?.url}
               width={breedData?.data?.width}
               height={breedData?.data?.height}
-              alt={`${breedData?.data?.name} photo`}
+              alt={`${id} photo`}
               className="sm:w-[370px] w-full sm:h-[370px] h-full rounded-[24px] object-cover"
             />
           </div>

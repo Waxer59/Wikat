@@ -18,7 +18,7 @@ export const SingleSearchedBreed = ({
       <li
         className={`flex ${
           isFirst
-            ? "z-[100] relative after:bg-[#DEC68B] sm:after:w-[45px] after:h-[180px] after:left-[-15px] after:mt-[20px] after:absolute after:z-[-1] after:content-[''] after:rounded-[15px]"
+            ? "z-[1] relative after:bg-[#DEC68B] sm:after:w-[45px] after:h-[180px] after:left-[-15px] after:mt-[20px] after:absolute after:z-[-1] after:content-[''] after:rounded-[15px]"
             : ''
         }`}>
         <Link

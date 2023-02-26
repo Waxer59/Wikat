@@ -1,13 +1,18 @@
 import { Route, Routes } from 'react-router-dom'
-import { TopBreeds, SingleBreed, HomePage, CatsArticle } from '../wikat/pages/'
+import {
+  TopBreedsPage,
+  SingleBreedPage,
+  HomePage,
+  CatsArticlePage
+} from '../wikat/pages/'
 
 export default function AppRouter() {
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
-      <Route path="/breed/:id" element={<SingleBreed />} />
-      <Route path="/topBreeds" element={<TopBreeds />} />
-      <Route path="/haveACat" element={<CatsArticle />} />
+      <Route path="/breed/:id" element={<SingleBreedPage />} />
+      <Route path="/topbreeds" element={<TopBreedsPage />} />
+      <Route path="/catsarticle" element={<CatsArticlePage />} />
     </Routes>
   )
 }
