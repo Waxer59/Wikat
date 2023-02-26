@@ -4,6 +4,8 @@ import { PersistQueryClientProvider } from '@tanstack/react-query-persist-client
 import { createSyncStoragePersister } from '@tanstack/query-sync-storage-persister'
 import { BrowserRouter } from 'react-router-dom'
 import AppRouter from './router/AppRouter'
+import { getEnvVariables } from './helpers/getEnvVariables'
+import { EnvironmentModeValues } from './vite-env-mode.enum'
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -28,7 +30,9 @@ export default function App() {
         <BrowserRouter>
           <AppRouter />
         </BrowserRouter>
-        <ReactQueryDevtools initialIsOpen={false} />
+        <ReactQueryDevtools
+          initialIsOpen={getEnvVariables().MODE === EnvironmentModeValues.dev}
+        />
       </QueryClientProvider>
     </PersistQueryClientProvider>
   )
