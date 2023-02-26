@@ -34,7 +34,7 @@ export default function SearchInput() {
           type="text"
           placeholder={window.innerWidth > 900 ? 'Enter your breed' : 'Search'}
           onChange={({ target }) => setSearch(target.value)}
-          className="outline-none placeholder:text-black sm:placeholder:text-[18px] placeholder:text-[12px] sm:p-[15px] p-[7px] rounded-[59px] w-[90%] sm:bg-[length:20px] bg-[length:10px]"></Combobox.Input>
+          className="self-start outline-none placeholder:text-black sm:placeholder:text-[18px] placeholder:text-[12px] sm:p-[15px] p-[7px] rounded-[59px] w-[85%] sm:w-[90%] sm:bg-[length:20px] bg-[length:10px]"></Combobox.Input>
         <HiOutlineMagnifyingGlass />
       </div>
       <Transition
