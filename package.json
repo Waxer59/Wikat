@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "workspaces": [
-    "frontend/",
-    "backend/"
+    "backend/",
+    "frontend/"
   ],
   "scripts": {
     "build": "turbo run build",

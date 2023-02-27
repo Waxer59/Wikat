@@ -4,13 +4,13 @@ services:
   redis:
     container_name: wikat_cache
     restart: always
-    image: redis:alpine
-    command: >
-          --requirepass ${REDIS_PASSWORD}
+    image: redis/redis-stack:latest
     ports:
       - ${REDIS_PORT}:6379
     volumes: 
       - ./redis:/data
+    environment:
+      - REDIS_ARGS=--requirepass ${REDIS_PASSWORD}
   redis-commander:
     container_name: redis-commander
     hostname: redis-commander

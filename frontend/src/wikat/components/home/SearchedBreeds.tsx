@@ -10,6 +10,7 @@ export default function SearchedBreeds() {
     ['breedsImages'],
     async () => await getCatData('/cat/breedsImages?limit=4')
   )
+
   return (
     <div className="p-[20px] bg-[#E3E1DC] rounded-b-[42px] w-full">
       <div className="max-w-1/2 w-[90%] mx-auto h-full sm:pt-[40px] pt-[0px]">

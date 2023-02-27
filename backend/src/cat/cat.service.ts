@@ -1,17 +1,26 @@
-import { Injectable } from '@nestjs/common';
+import { topBreedsSchema } from './entities/topBreed.entity';
+import { Injectable, OnModuleInit } from '@nestjs/common';
 import { AxiosAdapter } from '../common/adapters/axios.adapter';
 import {
   Breed,
   BreedElement,
 } from '../common/interfaces/catApiResponse.interface';
 import { CachingService } from '../caching/caching.service';
+import { RedisClientService } from '../redis-client/redis-client.service';
+import { Repository } from 'redis-om';
+import { TopBreeds } from './entities/topBreed.entity';
 
 @Injectable()
-export class CatService {
+export class CatService implements OnModuleInit {
+  private readonly topBreedsRepository: Repository<TopBreeds>;
+
   constructor(
     private readonly http: AxiosAdapter,
     private readonly cache: CachingService,
-  ) {}
+    private readonly redisClient: RedisClientService,
+  ) {
+    this.topBreedsRepository = redisClient.fetchRepository(topBreedsSchema);
+  }
 
   async getBreed(breed: string): Promise<Breed> {
     const breeData = await this.http.get(
@@ -53,5 +62,9 @@ export class CatService {
     }
 
     return response;
+  }
+
+  public async onModuleInit() {
+    await this.topBreedsRepository.createIndex();
   }
 }

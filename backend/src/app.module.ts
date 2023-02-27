@@ -9,6 +9,7 @@ import { redisStore } from 'cache-manager-redis-store';
 import { CachingModule } from './caching/caching.module';
 import { CatModule } from './cat/cat.module';
 import { CommonModule } from './common/common.module';
+import { RedisClientModule } from './redis-client/redis-client.module';
 
 @Module({
   imports: [
@@ -35,6 +36,7 @@ import { CommonModule } from './common/common.module';
     CachingModule,
     CatModule,
     CommonModule,
+    RedisClientModule,
   ],
   controllers: [],
   providers: [],

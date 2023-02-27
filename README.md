@@ -32,6 +32,8 @@ yarn deps
 docker-compose up -d
 ```
 
+> On port 8081 you can view the redis database.
+
 ### All endpoints are stored in the swagger documentation, in /api you can see all endpoints.
 
 ## 3. Configure Frontend
@@ -67,5 +69,6 @@ yarn dev
 - [Swagger](https://swagger.io)
 - [Redis](https://redis.io/)
 - [Redis Commander](https://github.com/joeferner/redis-commander)
+- [Redis stack](https://redis.io/docs/stack/)
 - [Docker Compose](https://docs.docker.com/compose/)
 - [Axios](https://axios-http.com/docs/intro)
