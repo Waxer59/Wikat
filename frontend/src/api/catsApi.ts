@@ -9,6 +9,6 @@ export const getCatData = async (urlFragment: string): Promise<any> => {
     return data
   } catch (err) {
     console.log(err)
-    return []
+    return null
   }
 }

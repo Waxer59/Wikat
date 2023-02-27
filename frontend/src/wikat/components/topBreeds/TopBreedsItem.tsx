@@ -1,15 +1,13 @@
 interface TopBreedsItemInterface {
   img: string
-  index: string
-  name: string
-  desc: string
+  index: number
+  breed: any
 }
 
 export const TopBreedsItem = ({
   img,
-  desc,
-  index,
-  name
+  breed,
+  index
 }: TopBreedsItemInterface) => {
   return (
     <li className="flex w-full gap-[50px] flex-wrap">
@@ -17,13 +15,13 @@ export const TopBreedsItem = ({
         <img
           className="w-[278px] h-[278px] xl:w-[170px] xl:h-[170px] rounded-[24px]"
           src={img}
-          alt={`${name} photo`}
+          alt={`${breed.name} photo`}
         />
       </div>
       <div className="flex flex-col gap-[24px]">
-        <h3 className="text-[36px] font-[600] text-topBreeds">{`${index}. ${name}`}</h3>
+        <h3 className="text-[36px] font-[600] text-topBreeds">{`${index}. ${breed.name}`}</h3>
         <p className="text-[18px] font-[500] text-topBreeds max-w-[800px] leading-[22px]">
-          {desc}
+          {breed.description}
         </p>
       </div>
     </li>

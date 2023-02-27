@@ -22,11 +22,11 @@ export class CatService implements OnModuleInit {
     this.topBreedsRepository = redisClient.fetchRepository(topBreedsSchema);
   }
 
-  async getBreed(breed: string): Promise<Breed> {
-    const breeData = await this.http.get(
-      `/images/search?breed_ids=${breed}&size=small`,
+  async getBreed(breedId: string): Promise<Breed> {
+    const breeData: Breed = await this.http.get(
+      `/images/search?breed_ids=${breedId}&size=small`,
     );
-    return breeData as Breed;
+    return breeData;
   }
 
   async getBreedsImages(limit: number, info: string) {
@@ -62,6 +62,48 @@ export class CatService implements OnModuleInit {
     }
 
     return response;
+  }
+
+  async getAllTopBreeds(limit = 10, offset = 0) {
+    const breeds = await this.topBreedsRepository
+      .search()
+      .sortDesc('timesSearched')
+      .return.page(offset, limit);
+    const fetchBreedsData = [];
+    breeds.forEach(({ breedId }) => {
+      fetchBreedsData.push(
+        this.http.get(`/images/search?breed_ids=${breedId}&size=small`),
+      );
+    });
+    return Promise.all(fetchBreedsData);
+  }
+
+  async getTopBreed(breedId: string) {
+    const breed = await this.topBreedsRepository
+      .search()
+      .where('breedId')
+      .equals(breedId)
+      .return.all();
+    return breed.length <= 0 ? null : breed;
+  }
+
+  async createTopBreed(breedId: string) {
+    const breed = await this.topBreedsRepository.createAndSave({
+      breedId,
+      timesSearched: 1,
+    });
+    return breed;
+  }
+
+  async incrementTopBreeds(breedId: string) {
+    if (!this.getTopBreed(breedId)) {
+      this.createTopBreed(breedId);
+    }
+    const breed = await this.topBreedsRepository.fetch(breedId);
+    breed.timesSearched += 1;
+    breed.breedId = breedId;
+    await this.topBreedsRepository.save(breed);
+    return breed;
   }
 
   public async onModuleInit() {

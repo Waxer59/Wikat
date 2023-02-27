@@ -7,5 +7,5 @@ export class TopBreeds extends Entity {
 
 export const topBreedsSchema = new Schema(TopBreeds, {
   breedId: { type: 'string' },
-  timesSearched: { type: 'number' },
+  timesSearched: { type: 'number', sortable: true },
 });

@@ -10,14 +10,14 @@ import { ApiProperty, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { CatService } from './cat.service';
 import { CacheInterceptor } from '@nestjs/common/cache';
 import { ParseOptionalIntPipe } from '../common/pipes/parse-optional-int.pipe';
-// import { topBreedsRepository } from './schemas/topBreeds.schema';
+import { IncrementBreedTimesViewedInterceptor } from '../common/interceptors/incrementBreedTimesViewed.interceptor';
 
 @Controller('cat')
 @ApiTags('Cat')
 export class CatController {
   constructor(private readonly catService: CatService) {}
   @Get('breed/:breed')
-  @UseInterceptors(CacheInterceptor)
+  @UseInterceptors(IncrementBreedTimesViewedInterceptor, CacheInterceptor)
   @ApiResponse({
     status: 200,
     description: 'Single breed information',
@@ -69,8 +69,15 @@ export class CatController {
   }
 
   @Get('/topBreeds')
-  async getTopBreeds() {
-    // return this.catService.getTopBreeds();
-    throw new Error('Not implemented yet!!');
+  @ApiProperty()
+  @ApiResponse({
+    status: 200,
+    description: 'TopBreeds information',
+  })
+  async getTopBreeds(
+    @Query('limit', ParseOptionalIntPipe) limit,
+    @Query('offset', ParseOptionalIntPipe) offset,
+  ) {
+    return this.catService.getAllTopBreeds(limit, offset);
   }
 }
