@@ -521,6 +521,13 @@
     minimatch "^3.1.2"
     strip-json-comments "^3.1.1"
 
+"@headlessui/react@^1.7.12":
+  version "1.7.12"
+  resolved "https://registry.yarnpkg.com/@headlessui/react/-/react-1.7.12.tgz#9ab2baa3c4f632782631e00937f9531a34033619"
+  integrity sha512-FhSx5V+Qp0GvbTpaxyS+ymGDDNntCacClWsk/d8Upbr19g3AsPbjfPk4+m2CgJGcuCB5Dz7LpUIOAbvQTyjL2g==
+  dependencies:
+    client-only "^0.0.1"
+
 "@humanwhocodes/config-array@^0.11.8":
   version "0.11.8"
   resolved "https://registry.yarnpkg.com/@humanwhocodes/config-array/-/config-array-0.11.8.tgz#03595ac2075a4dc0f191cc2131de14fbd7d410b9"
@@ -969,6 +976,15 @@
     generic-pool "3.9.0"
     yallist "4.0.0"
 
+"@redis/client@1.5.6":
+  version "1.5.6"
+  resolved "https://registry.yarnpkg.com/@redis/client/-/client-1.5.6.tgz#869cc65718d7d5493ef655a71dc40f3bc64a1b28"
+  integrity sha512-dFD1S6je+A47Lj22jN/upVU2fj4huR7S9APd7/ziUXsIXDL+11GPYti4Suv5y8FuXaN+0ZG4JF+y1houEJ7ToA==
+  dependencies:
+    cluster-key-slot "1.1.2"
+    generic-pool "3.9.0"
+    yallist "4.0.0"
+
 "@redis/graph@1.1.0":
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@redis/graph/-/graph-1.1.0.tgz#cc2b82e5141a29ada2cce7d267a6b74baa6dd519"
@@ -983,6 +999,11 @@
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/@redis/search/-/search-1.1.1.tgz#f547b76b74f267831d3b368e3d7bba3a6a9e32bd"
   integrity sha512-pqCXTc5e7wJJgUuJiC3hBgfoFRoPxYzwn0BEfKgejTM7M/9zP3IpUcqcjgfp8hF+LoV8rHZzcNTz7V+pEIY7LQ==
+
+"@redis/search@1.1.2":
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/@redis/search/-/search-1.1.2.tgz#6a8f66ba90812d39c2457420f859ce8fbd8f3838"
+  integrity sha512-/cMfstG/fOh/SsE+4/BQGeuH/JJloeWuH+qJzM8dbxuWvdWibWAOAHHCZTMPhV3xIlH4/cUEIA8OV5QnYpaVoA==
 
 "@redis/time-series@1.0.4":
   version "1.0.4"
@@ -1128,6 +1149,11 @@
   dependencies:
     "@types/connect" "*"
     "@types/node" "*"
+
+"@types/cache-manager@^4.0.2":
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/@types/cache-manager/-/cache-manager-4.0.2.tgz#5e76dd9e7881c23f332c2f48e5f326bd05ba9ac9"
+  integrity sha512-fT5FMdzsiSX0AbgnS5gDvHl2Nco0h5zYyjwDQy4yPC7Ww6DeGMVKPRqIZtg9HOXDV2kkc18SL1B0N8f0BecrCA==
 
 "@types/connect@*":
   version "3.4.35"
@@ -2282,6 +2308,11 @@ cli-width@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/cli-width/-/cli-width-3.0.0.tgz#a2f48437a2caa9a22436e794bf071ec9e61cedf6"
   integrity sha512-FxqpkPPwu1HjuN93Omfm4h8uIanXofW0RxVEW3k5RKx+mJJYSthzNhp32Kzxxy3YAEZ/Dc/EWN1vZRY0+kOhbw==
+
+client-only@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/client-only/-/client-only-0.0.1.tgz#38bba5d403c41ab150bff64a95c85013cf73bca1"
+  integrity sha512-IV3Ou0jSMzZrd3pZ48nLkT9DA7Ag1pnPzaiQhpW7c3RbcqqzvzzVu+L8gfqMp/8IM2MQtSiqaCxrrcfu8I8rMA==
 
 cliui@^8.0.1:
   version "8.0.1"
@@ -5624,6 +5655,26 @@ rechoir@^0.6.2:
   dependencies:
     resolve "^1.1.6"
 
+redis-om@^0.3.6:
+  version "0.3.6"
+  resolved "https://registry.yarnpkg.com/redis-om/-/redis-om-0.3.6.tgz#5c2d9e57a614e2ae9c21b8ab1d22baa0b7c63fa6"
+  integrity sha512-WRmrAm1n1EQIQbEwbfqpceuxHgr7LKOZ471c/KGxyOTVFFm53E0S7vFSZA7a1Jnga7aHTOYqLhhMWE0lKKdsNw==
+  dependencies:
+    redis "^4.0.4"
+    ulid "^2.3.0"
+
+redis@^4.0.4:
+  version "4.6.5"
+  resolved "https://registry.yarnpkg.com/redis/-/redis-4.6.5.tgz#f32fbde44429e96f562bb0c9b1db0143ab8cfa4f"
+  integrity sha512-O0OWA36gDQbswOdUuAhRL6mTZpHFN525HlgZgDaVNgCJIAZR3ya06NTESb0R+TUZ+BFaDpz6NnnVvoMx9meUFg==
+  dependencies:
+    "@redis/bloom" "1.2.0"
+    "@redis/client" "1.5.6"
+    "@redis/graph" "1.1.0"
+    "@redis/json" "1.0.4"
+    "@redis/search" "1.1.2"
+    "@redis/time-series" "1.0.4"
+
 redis@^4.3.1, redis@^4.6.4:
   version "4.6.4"
   resolved "https://registry.yarnpkg.com/redis/-/redis-4.6.4.tgz#fe84169de000b247009c70c2740f22d1f85bc2de"
@@ -6528,6 +6579,11 @@ uid@2.0.1:
   dependencies:
     "@lukeed/csprng" "^1.0.0"
 
+ulid@^2.3.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/ulid/-/ulid-2.3.0.tgz#93063522771a9774121a84d126ecd3eb9804071f"
+  integrity sha512-keqHubrlpvT6G2wH0OEfSW4mquYRcbe/J8NMmveoQOjUqmo+hXtO+ORCpWhdbZ7k72UtY61BL7haGxW6enBnjw==
+
 unbox-primitive@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/unbox-primitive/-/unbox-primitive-1.0.2.tgz#29032021057d5e6cdbd08c5129c226dff8ed6f9e"
@@ -6562,6 +6618,11 @@ uri-js@^4.2.2:
   integrity sha512-7rKUyy33Q1yc98pQ1DAmLtwX109F7TIfWlW1Ydo8Wl1ii1SeHieeh0HHfPeL2fMXK6z0s8ecKs9frCuLJvndBg==
   dependencies:
     punycode "^2.1.0"
+
+use-debounce@^9.0.3:
+  version "9.0.3"
+  resolved "https://registry.yarnpkg.com/use-debounce/-/use-debounce-9.0.3.tgz#bac660c19ab7b38662e08608fee23c7ad303f532"
+  integrity sha512-FhtlbDtDXILJV7Lix5OZj5yX/fW1tzq+VrvK1fnT2bUrPOGruU9Rw8NCEn+UI9wopfERBEZAOQ8lfeCJPllgnw==
 
 use-sync-external-store@^1.2.0:
   version "1.2.0"

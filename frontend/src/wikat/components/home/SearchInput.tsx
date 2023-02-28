@@ -29,12 +29,12 @@ export default function SearchInput() {
 
   return (
     <Combobox value={search} onChange={(e: string) => onComboboxChange(e)}>
-      <div className="flex items-center">
+      <div className="flex items-center border-black border-solid border rounded-[24px]">
         <Combobox.Input
           type="text"
           placeholder={window.innerWidth > 900 ? 'Enter your breed' : 'Search'}
           onChange={({ target }) => setSearch(target.value)}
-          className="self-start outline-none placeholder:text-black sm:placeholder:text-[18px] placeholder:text-[12px] sm:p-[15px] p-[7px] rounded-[59px] w-[85%] sm:w-[90%] sm:bg-[length:20px] bg-[length:10px]"></Combobox.Input>
+          className="self-start outline-none leading-[12px] sm:leaging-[18px] placeholder:text-black sm:text-[18px] text-[12px] sm:p-[15px] p-[7px] rounded-[59px] w-[85%] sm:w-[90%] sm:bg-[length:20px] bg-[length:10px]"></Combobox.Input>
         <HiOutlineMagnifyingGlass />
       </div>
       <Transition
@@ -57,7 +57,9 @@ export default function SearchInput() {
                     active ? 'bg-[#9797971A]' : ''
                   }`
                 }>
-                <span className="text-[18px] pt-[20px] font-[500]">{name}</span>
+                <span className="text-[12px] sm:text-[18px] pt-[20px] font-[500]">
+                  {name}
+                </span>
               </Combobox.Option>
             ))}
         </Combobox.Options>

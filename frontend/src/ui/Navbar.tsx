@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 
 export default function Navbar() {
   return (
-    <div className="mt-9 text-2xl font-normal flex justify-start">
+    <div className="mt-9 text-2xl font-normal flex justify-center sm:justify-start">
       <Link to="/" className="flex items-center">
         Wi<strong>kat</strong>
         <svg

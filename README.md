@@ -62,6 +62,7 @@ yarn dev
 - [React TanStack Query](https://tanstack.com/query/latest/docs/react/overview)
 - [Headless UI](https://headlessui.com/)
 - [Use debounce](https://github.com/xnimorz/use-debounce#readme)
+- [React modal](https://www.npmjs.com/package/react-modal)
 
 ### Backend
 
