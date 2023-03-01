@@ -6,6 +6,9 @@ import { AppModule } from './app.module';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   const logger = new Logger('Bootstrap');
+
+  app.setGlobalPrefix('api');
+
   const config = new DocumentBuilder()
     .setTitle('Cat Api')
     .setDescription('The wikat API')
@@ -14,8 +17,6 @@ async function bootstrap() {
   const document = SwaggerModule.createDocument(app, config);
 
   app.enableCors();
-
-  app.setGlobalPrefix('api');
 
   app.useGlobalPipes(
     new ValidationPipe({
