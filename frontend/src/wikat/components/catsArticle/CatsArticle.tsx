@@ -1,4 +1,4 @@
-export default function CatsArticle() {
+export const CatsArticle: React.FC = () => {
   return (
     <>
       <h2 className="text-[28px] font-[600] text-center mt-[20px]">
@@ -70,3 +70,5 @@ export default function CatsArticle() {
     </>
   )
 }
+
+export default CatsArticle

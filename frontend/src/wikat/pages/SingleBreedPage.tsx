@@ -1,7 +1,7 @@
 import { Footer, Navbar } from '../../ui'
 import Breed from '../components/singleBreed/Breed'
 
-export default function SingleBreedPage() {
+const SingleBreedPage: React.FC = () => {
   return (
     <>
       <Navbar />
@@ -10,3 +10,5 @@ export default function SingleBreedPage() {
     </>
   )
 }
+
+export default SingleBreedPage

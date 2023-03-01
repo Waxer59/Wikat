@@ -1,17 +1,17 @@
 import { Link } from 'react-router-dom'
 import { type BreedElement } from '../../../common/interfaces/catApiResponseInterface'
 
-interface SingleSearchedBreedInterface {
+interface Props {
   isFirst: boolean
   breed: BreedElement
   url: string
 }
 
-export const SingleSearchedBreed = ({
+const SingleSearchedBreed: React.FC<Props> = ({
   isFirst = false,
   breed,
   url
-}: SingleSearchedBreedInterface) => {
+}) => {
   const { id, name } = breed
   return (
     <>
@@ -35,3 +35,5 @@ export const SingleSearchedBreed = ({
     </>
   )
 }
+
+export default SingleSearchedBreed

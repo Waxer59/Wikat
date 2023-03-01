@@ -1,7 +1,7 @@
 import { Footer, Navbar } from '../../ui'
 import CatsArticle from '../components/catsArticle/CatsArticle'
 
-export default function CatsArticlePage() {
+const CatsArticlePage: React.FC = () => {
   return (
     <>
       <Navbar />
@@ -10,3 +10,5 @@ export default function CatsArticlePage() {
     </>
   )
 }
+
+export default CatsArticlePage

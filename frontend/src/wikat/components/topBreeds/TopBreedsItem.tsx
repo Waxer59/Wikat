@@ -1,14 +1,10 @@
-interface TopBreedsItemInterface {
+interface Props {
   img: string
   index: number
   breed: any
 }
 
-export const TopBreedsItem = ({
-  img,
-  breed,
-  index
-}: TopBreedsItemInterface) => {
+const TopBreedsItem: React.FC<Props> = ({ img, breed, index }) => {
   return (
     <li className="flex w-full gap-[50px] flex-wrap">
       <div className="flex justify-center">

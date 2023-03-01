@@ -1,6 +1,6 @@
 import { BsGithub } from 'react-icons/bs'
 
-export default function Footer() {
+const Footer: React.FC = () => {
   return (
     <footer className="mt-auto bg-black w-full rounded-t-[42px] p-[30px] flex sm:justify-between text-white items-center sm:flex-row flex-col gap-[15px]">
       <div className="text-[24px] font-normal flex items-center justify-start">
@@ -26,3 +26,5 @@ export default function Footer() {
     </footer>
   )
 }
+
+export default Footer

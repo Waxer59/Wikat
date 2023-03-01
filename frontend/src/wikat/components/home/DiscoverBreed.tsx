@@ -1,7 +1,7 @@
 import SearchBreed from './SearchBreed'
 import SearchedBreeds from './SearchedBreeds'
 
-export default function DiscoverBreed() {
+const DiscoverBreed: React.FC = () => {
   return (
     <div className="mt-[30px] flex justify-center flex-col items-center">
       <SearchBreed />
@@ -9,3 +9,5 @@ export default function DiscoverBreed() {
     </div>
   )
 }
+
+export default DiscoverBreed

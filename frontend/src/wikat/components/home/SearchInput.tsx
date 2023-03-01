@@ -6,9 +6,9 @@ import { useDebounce } from 'use-debounce'
 import { useNavigate } from 'react-router-dom'
 import { HiOutlineMagnifyingGlass } from 'react-icons/hi2'
 
-export default function SearchInput() {
+const SearchInput: React.FC = () => {
   const [search, setSearch] = useState('')
-  const [query, setQuery] = useState<any>('')
+  const [query, setQuery] = useState<BreedElement[] | null>(null)
   const navigate = useNavigate()
 
   const [debouncedValue] = useDebounce(search, 1000)
@@ -18,7 +18,7 @@ export default function SearchInput() {
       const response = await getCatData(`/cat/breeds?filter=${debouncedValue}`)
       setQuery(response)
     }
-    if (debouncedValue.trim() !== '') {
+    if (debouncedValue.trim().length > 0) {
       setQueryData()
     }
   }, [debouncedValue])
@@ -33,7 +33,7 @@ export default function SearchInput() {
         <Combobox.Input
           type="text"
           placeholder={window.innerWidth > 900 ? 'Enter your breed' : 'Search'}
-          onChange={({ target }) => setSearch(target.value)}
+          onChange={({ target }) => setSearch(target.value.trim())}
           className="self-start outline-none leading-[12px] sm:leaging-[18px] placeholder:text-black sm:text-[18px] text-[12px] sm:p-[15px] p-[7px] rounded-[59px] w-[85%] sm:w-[90%] sm:bg-[length:20px] bg-[length:10px]"></Combobox.Input>
         <HiOutlineMagnifyingGlass />
       </div>
@@ -42,13 +42,15 @@ export default function SearchInput() {
         leave="transition ease-in duration-100"
         leaveFrom="opacity-100"
         leaveTo="opacity-0"
-        afterLeave={() => setQuery('')}>
+        afterLeave={() => setQuery(null)}>
         <Combobox.Options
           className={`border-[15px] border-white border-solid flex flex-col gap-[10px] p-[10px] overflow-auto overflow-x-hidden absolute mt-[15px] z-10 w-full rounded-[24px] bg-white max-h-60 ${
-            query.length <= 0 || search.length <= 0 ? 'hidden' : ''
+            query === null || query?.length <= 0 || search.length <= 0
+              ? 'hidden'
+              : ''
           }`}>
-          {query !== '' &&
-            query.map(({ name, id }: BreedElement) => (
+          {query != null &&
+            query.map(({ name, id }) => (
               <Combobox.Option
                 key={id}
                 value={id}
@@ -67,3 +69,5 @@ export default function SearchInput() {
     </Combobox>
   )
 }
+
+export default SearchInput

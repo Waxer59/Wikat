@@ -2,7 +2,7 @@ import { Footer, Navbar } from '../../ui'
 import DiscoverBreed from '../components/home/DiscoverBreed'
 import HaveACat from '../components/home/HaveACat'
 
-export default function HomePage() {
+const HomePage: React.FC = () => {
   return (
     <>
       <Navbar />
@@ -12,3 +12,5 @@ export default function HomePage() {
     </>
   )
 }
+
+export default HomePage

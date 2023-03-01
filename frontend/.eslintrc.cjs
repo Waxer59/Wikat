@@ -20,7 +20,9 @@ module.exports = {
     '@typescript-eslint/restrict-template-expressions': 'off',
     '@typescript-eslint/no-confusing-void-expression': 'off',
     '@typescript-eslint/prefer-optional-chain': 'off',
-    '@typescript-eslint/no-floating-promises': 'off'
+    '@typescript-eslint/no-floating-promises': 'off',
+    'react/prop-types': 'off',
+    '@typescript-eslint/restrict-plus-operands': 'off'
   },
   settings: {
     react: {

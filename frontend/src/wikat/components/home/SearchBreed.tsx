@@ -3,12 +3,12 @@ import { useState } from 'react'
 import Modal from 'react-modal'
 import { HiXMark } from 'react-icons/hi2'
 
-export default function SearchBreed() {
-  const [isSearchModalOpen, setIsSearchModalOpen] = useState(false)
+const SearchBreed: React.FC = () => {
+  const [isSearchModalOpen, setIsSearchModalOpen] = useState<boolean>(false)
 
   const onInputClick = () => {
     if (window.innerWidth <= 500) {
-      setIsSearchModalOpen((el) => !el)
+      setIsSearchModalOpen(true)
     }
   }
 
@@ -61,3 +61,5 @@ export default function SearchBreed() {
     </div>
   )
 }
+
+export default SearchBreed
