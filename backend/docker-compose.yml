@@ -16,10 +16,7 @@ services:
     hostname: redis-commander
     image: ghcr.io/joeferner/redis-commander:latest
     restart: always
-    environment:
-    - REDIS_HOST=redis
-    - REDIS_PORT=6379
-    - REDIS_PASSWORD=${REDIS_PASSWORD}
-    - REDIS_USERNAME=${REDIS_USERNAME}
+    env_file:
+      - .env
     ports:
     - "8081:8081"
