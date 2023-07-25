@@ -18,7 +18,10 @@ services:
     restart: always
     depends_on:
       - redis
-    env_file:
-      - .env
+    environment:
+    - REDIS_HOST=redis
+    - REDIS_PORT=6379
+    - REDIS_PASSWORD=${REDIS_PASSWORD}
+    - REDIS_USERNAME=${REDIS_USERNAME}
     ports:
     - "8081:8081"
