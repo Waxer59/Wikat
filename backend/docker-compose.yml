@@ -16,6 +16,8 @@ services:
     hostname: redis-commander
     image: ghcr.io/joeferner/redis-commander:latest
     restart: always
+    depends_on:
+      - redis
     env_file:
       - .env
     ports:
