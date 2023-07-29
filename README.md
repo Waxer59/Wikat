@@ -14,12 +14,6 @@ The api being used in the project is [the cat api](https://thecatapi.com/)
 yarn
 ```
 
-### 2. Then you need to install the dependencies of backend and frontend with the command, on the root of the project:
-
-```
-yarn deps
-```
-
 ## 2. Configure Backend
 
 ### Configure the environment variables by renaming the file `.template.env` to `.env` in the root of the frontend folder and filling the variables with the values you want.
