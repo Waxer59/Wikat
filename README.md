@@ -48,7 +48,7 @@ docker-compose up -d
 yarn dev
 ```
 
-> This command will run both proyects in parallel, the fronted and the backend.
+> This command will run both proyects in parallel, the frontend and the backend.
 
 ## Technologies
 
@@ -62,6 +62,7 @@ yarn dev
 - [React TanStack Query](https://tanstack.com/query/latest/docs/react/overview)
 - [Headless UI](https://headlessui.com/)
 - [Use debounce](https://github.com/xnimorz/use-debounce#readme)
+- [React modal](https://www.npmjs.com/package/react-modal)
 
 ### Backend
 

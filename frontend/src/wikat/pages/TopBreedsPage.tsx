@@ -1,7 +1,7 @@
 import { Footer, Navbar } from '../../ui'
 import TopBreeds from '../components/topBreeds/TopBreeds'
 
-export default function TopBreedsPage() {
+const TopBreedsPage: React.FC = () => {
   return (
     <>
       <Navbar />
@@ -10,3 +10,5 @@ export default function TopBreedsPage() {
     </>
   )
 }
+
+export default TopBreedsPage

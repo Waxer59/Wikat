@@ -2,7 +2,7 @@ version: "3"
 
 services:
   redis:
-    container_name: wikat_cache
+    container_name: wikat_redis
     restart: always
     image: redis/redis-stack:latest
     ports:
@@ -16,6 +16,8 @@ services:
     hostname: redis-commander
     image: ghcr.io/joeferner/redis-commander:latest
     restart: always
+    depends_on:
+      - redis
     environment:
     - REDIS_HOST=redis
     - REDIS_PORT=6379

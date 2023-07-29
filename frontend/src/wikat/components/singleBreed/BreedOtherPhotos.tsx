@@ -1,16 +1,16 @@
-interface BreedOtherPhotosInterface {
+interface Props {
   width: number
   height: number
   name: string
   url: string
 }
 
-export const BreedOtherPhotos = ({
+export const BreedOtherPhotos: React.FC<Props> = ({
   width,
   height,
   name,
   url
-}: BreedOtherPhotosInterface) => {
+}) => {
   return (
     <li>
       <img
@@ -24,3 +24,5 @@ export const BreedOtherPhotos = ({
     </li>
   )
 }
+
+export default BreedOtherPhotos

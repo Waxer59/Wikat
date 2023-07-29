@@ -56,6 +56,7 @@ export class CatController {
   }
 
   @Get('breeds')
+  @UseInterceptors(CacheInterceptor)
   @ApiProperty()
   @ApiResponse({
     status: 200,

@@ -1,14 +1,14 @@
 import { getCatData } from '../../../api/catsApi'
 import TopBreedsItem from './TopBreedsItem'
 import { useState, useEffect } from 'react'
+import { type Breed } from '../../../common/interfaces/catApiResponseInterface'
 
-const TopBreeds = () => {
-  const [TopBreeds, setTopBreeds] = useState<any | null>(null)
+const TopBreeds: React.FC = () => {
+  const [TopBreeds, setTopBreeds] = useState<Breed[] | null>(null)
 
   useEffect(() => {
     const fetchData = async () => {
       const topBreeds = await getCatData('/cat/topBreeds')
-      // console.log(topBreeds[0][0].breeds)
       setTopBreeds(topBreeds)
     }
     fetchData()

@@ -1,11 +1,11 @@
 import { AiOutlineArrowRight } from 'react-icons/ai'
-import { SingleSearchedBreed } from './SingleSearchedBreed'
+import SingleSearchedBreed from './SingleSearchedBreed'
 import { getCatData } from '../../../api/catsApi'
 import { type Breed } from '../../../common/interfaces/catApiResponseInterface'
 import { useQuery } from '@tanstack/react-query'
 import { Link } from 'react-router-dom'
 
-export default function SearchedBreeds() {
+const SearchedBreeds: React.FC = () => {
   const breedData = useQuery<Breed[]>(
     ['breedsImages'],
     async () => await getCatData('/cat/breedsImages?limit=4')
@@ -43,3 +43,5 @@ export default function SearchedBreeds() {
     </div>
   )
 }
+
+export default SearchedBreeds

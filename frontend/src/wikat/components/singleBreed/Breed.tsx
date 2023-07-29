@@ -3,13 +3,16 @@ import {
   type BreedElement,
   type BreedPhoto
 } from '../../../common/interfaces/catApiResponseInterface'
-import { BreedLevelCharacteristics } from './BreedLevelCharacteristics'
-import { BreedOtherPhotos } from './BreedOtherPhotos'
+import BreedCharacteristic from './BreedCharacteristic'
+import BreedOtherPhotos from './BreedOtherPhotos'
 import { getCatData } from '../../../api/catsApi'
 import { useQuery } from '@tanstack/react-query'
 
-const BREED_LEVEL_CHARACTERISTICS = [
-  'Adaptabillity',
+const BREED_CHARACTERISTICS = [
+  'Temperament',
+  'Origin',
+  'Life Span',
+  'Adaptability',
   'Affection level',
   'Child Friendly',
   'Grooming',
@@ -28,13 +31,15 @@ interface BreedData extends BreedElement {
   [key: string]: any
 }
 
-export default function Breed() {
+const Breed: React.FC = () => {
   const { id } = useParams()
 
   const breedData = useQuery<BreedData>([id], async () => {
     const [{ breeds, url, width, height }] = await getCatData(
       `/cat/breed/${id}`
     )
+
+    breeds[0].life_span += ' years'
 
     return {
       ...breeds[0],
@@ -62,6 +67,7 @@ export default function Breed() {
       </ul>
     )
   }
+
   return (
     <>
       <div className="flex flex-col sm:ml-[35px]">
@@ -79,24 +85,21 @@ export default function Breed() {
             <h2 className="font-[600] text-[36px]">{breedData?.data?.name}</h2>
             <p className="max-w-[600px] text-[18px] mt-[25px]">{}</p>
             <ul className="flex flex-col gap-[32px] mt-[32px]">
-              <li>
-                <strong>Temperament:</strong> {breedData?.data?.temperament}
-              </li>
-              <li>
-                <strong>Origin:</strong> {breedData?.data?.origin}
-              </li>
-              <li>
-                <strong>Life Span:</strong> {breedData?.data?.life_span} years
-              </li>
-              {BREED_LEVEL_CHARACTERISTICS.map((val) => (
-                <BreedLevelCharacteristics
-                  key={val}
-                  characteristic={val}
-                  levelBars={levelBars(
-                    breedData?.data?.[val.replace(/ /, '_').toLowerCase()]
-                  )}
-                />
-              ))}
+              {BREED_CHARACTERISTICS.map((title) => {
+                const breedDataElement =
+                  breedData?.data?.[title.replace(/ /g, '_').toLowerCase()]
+                return (
+                  <BreedCharacteristic
+                    key={title}
+                    characteristic={title}
+                    desc={
+                      !isNaN(breedDataElement)
+                        ? levelBars(breedDataElement)
+                        : ` ${breedDataElement}`
+                    }
+                  />
+                )
+              })}
             </ul>
           </div>
         </div>
@@ -121,3 +124,5 @@ export default function Breed() {
     </>
   )
 }
+
+export default Breed

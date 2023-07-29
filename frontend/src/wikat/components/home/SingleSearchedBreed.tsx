@@ -1,24 +1,24 @@
 import { Link } from 'react-router-dom'
 import { type BreedElement } from '../../../common/interfaces/catApiResponseInterface'
 
-interface SingleSearchedBreedInterface {
+interface Props {
   isFirst: boolean
   breed: BreedElement
   url: string
 }
 
-export const SingleSearchedBreed = ({
+const SingleSearchedBreed: React.FC<Props> = ({
   isFirst = false,
   breed,
   url
-}: SingleSearchedBreedInterface) => {
+}) => {
   const { id, name } = breed
   return (
     <>
       <li
         className={`flex ${
           isFirst
-            ? "z-[1] relative after:bg-[#DEC68B] sm:after:w-[45px] after:h-[180px] after:left-[-15px] after:mt-[20px] after:absolute after:z-[-1] after:content-[''] after:rounded-[15px]"
+            ? "z-[0] relative after:bg-[#DEC68B] sm:after:w-[45px] after:h-[180px] after:left-[-15px] after:mt-[20px] after:absolute after:z-[-2] after:content-[''] after:rounded-[15px]"
             : ''
         }`}>
         <Link
@@ -35,3 +35,5 @@ export const SingleSearchedBreed = ({
     </>
   )
 }
+
+export default SingleSearchedBreed

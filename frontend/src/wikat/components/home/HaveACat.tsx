@@ -1,7 +1,7 @@
 import { AiOutlineArrowRight } from 'react-icons/ai'
 import { Link } from 'react-router-dom'
 
-export default function HaveACat() {
+const HaveACat: React.FC = () => {
   return (
     <div className="mt-[100px] mb-[100px] flex items-center gap-[40px] flex-col mds:flex-row">
       <div className="mds:max-w-[400px]">
@@ -32,3 +32,5 @@ export default function HaveACat() {
     </div>
   )
 }
+
+export default HaveACat

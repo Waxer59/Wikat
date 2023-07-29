@@ -1,6 +1,17 @@
 import SearchInput from './SearchInput'
+import { useState } from 'react'
+import Modal from 'react-modal'
+import { HiXMark } from 'react-icons/hi2'
 
-export default function SearchBreed() {
+const SearchBreed: React.FC = () => {
+  const [isSearchModalOpen, setIsSearchModalOpen] = useState<boolean>(false)
+
+  const onInputClick = () => {
+    if (window.innerWidth <= 500) {
+      setIsSearchModalOpen(true)
+    }
+  }
+
   return (
     <div className="bg-black bg-bottom bg-discoverCat bg-cover bg-no-repeat sm:h-[550px] p-[5px] h-[200px] w-full rounded-t-[42px]">
       <div className="flex flex-col gap-[25px] max-w-1/2 w-[90%] justify-center h-full pl-[40px]">
@@ -28,9 +39,27 @@ export default function SearchBreed() {
           </p>
         </div>
         <div className="sm:text-[18px] text-[12px] w-[50%] relative bg-white rounded-[24px]">
-          <SearchInput />
+          <div onClick={onInputClick}>
+            <SearchInput />
+          </div>
+
+          <Modal
+            isOpen={isSearchModalOpen}
+            className="z-[10] w-[95%] max-w-[350px] h-[350px] bg-white flex flex-col p-2 gap-[20px]"
+            ariaHideApp={false}>
+            <button
+              onClick={() => setIsSearchModalOpen(false)}
+              className="self-end">
+              <HiXMark className="ml-auto" />
+            </button>
+            <div>
+              <SearchInput />
+            </div>
+          </Modal>
         </div>
       </div>
     </div>
   )
 }
+
+export default SearchBreed

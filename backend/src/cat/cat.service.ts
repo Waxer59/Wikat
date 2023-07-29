@@ -23,10 +23,10 @@ export class CatService implements OnModuleInit {
   }
 
   async getBreed(breedId: string): Promise<Breed> {
-    const breeData: Breed = await this.http.get(
+    const breedData: Breed = await this.http.get(
       `/images/search?breed_ids=${breedId}&size=small`,
     );
-    return breeData;
+    return breedData;
   }
 
   async getBreedsImages(limit: number, info: string) {
@@ -44,16 +44,9 @@ export class CatService implements OnModuleInit {
   }
 
   async getBreeds(limit: number, filterName: string) {
-    const CACHE_KEY = `breeds${limit ? `-${limit}` : ''}`;
-
-    let response: BreedElement[] = JSON.parse(
-      await this.cache.getCacheKey(CACHE_KEY),
+    let response = await this.http.get<BreedElement[]>(
+      `/breeds?limit=${limit}`,
     );
-
-    if (!response) {
-      response = await this.http.get(`/breeds?limit=${limit}`);
-      await this.cache.setCacheKey(CACHE_KEY, JSON.stringify(response));
-    }
 
     if (filterName) {
       response = response.filter((el) =>
