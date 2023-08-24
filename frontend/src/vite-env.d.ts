@@ -1,3 +1,5 @@
+/// <reference types="vite/client" />
+
 import { type EnvironmentValues } from './vite-env-mode.enum'
 
 interface ImportMetaEnv {
