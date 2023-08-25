@@ -27,7 +27,8 @@ module.exports = {
     '@typescript-eslint/prefer-optional-chain': 'off',
     '@typescript-eslint/no-floating-promises': 'off',
     'react/prop-types': 'off',
-    '@typescript-eslint/restrict-plus-operands': 'off'
+    '@typescript-eslint/restrict-plus-operands': 'off',
+    "react-hooks/exhaustive-deps": "off"
   },
   settings: {
     react: {
