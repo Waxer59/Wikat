@@ -5,7 +5,6 @@ import {
   CallHandler,
 } from '@nestjs/common';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
 import { CatService } from '../../cat/cat.service';
 
 export interface Response<T> {
@@ -25,7 +24,7 @@ export class IncrementBreedTimesViewedInterceptor<T>
     const http = context.switchToHttp();
     const request = http.getRequest();
 
-    const { params, query, body, headers, user } = request;
+    const { params } = request;
     const { breed } = params;
 
     this.catService.incrementTopBreeds(breed);
