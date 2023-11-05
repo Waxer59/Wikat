@@ -7,6 +7,7 @@ import BreedCharacteristic from './BreedCharacteristic'
 import BreedOtherPhotos from './BreedOtherPhotos'
 import { getCatData } from '../../../api/catsApi'
 import { useQuery } from '@tanstack/react-query'
+import { BounceLoader } from 'react-spinners'
 
 const BREED_CHARACTERISTICS = [
   'Temperament',
@@ -68,6 +69,14 @@ const Breed: React.FC = () => {
     )
   }
 
+  if (breedData.isLoading) {
+    return (
+      <div className="flex justify-center mt-48">
+        <BounceLoader color="#e1e1e1" />
+      </div>
+    )
+  }
+
   return (
     <>
       <div className="flex flex-col sm:ml-[35px]">
@@ -83,7 +92,6 @@ const Breed: React.FC = () => {
           </div>
           <div>
             <h2 className="font-[600] text-[36px]">{breedData?.data?.name}</h2>
-            <p className="max-w-[600px] text-[18px] mt-[25px]">{}</p>
             <ul className="flex flex-col gap-[32px] mt-[32px]">
               {BREED_CHARACTERISTICS.map((title) => {
                 const breedDataElement =

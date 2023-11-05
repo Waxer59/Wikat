@@ -27,7 +27,7 @@ const SingleSearchedBreed: React.FC<Props> = ({
           <img
             src={url}
             alt={`${name} photo`}
-            className="sm:w-[220px] w-[130px] sm:h-[220px] h-[130px] rounded-[24px]"
+            className="sm:w-[220px] w-[130px] sm:h-[220px] h-[130px] rounded-[24px] object-cover"
           />
           <span className="font-bold sm:text-[18px] text-[12px]">{name}</span>
         </Link>

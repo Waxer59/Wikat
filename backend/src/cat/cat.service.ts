@@ -8,11 +8,10 @@ import {
 import { CachingService } from '../caching/caching.service';
 import { RedisClientService } from '../redis-client/redis-client.service';
 import { Repository } from 'redis-om';
-import { TopBreeds } from './entities/topBreed.entity';
 
 @Injectable()
 export class CatService implements OnModuleInit {
-  private readonly topBreedsRepository: Repository<TopBreeds>;
+  private readonly topBreedsRepository: Repository;
 
   constructor(
     private readonly http: AxiosAdapter,
@@ -81,7 +80,7 @@ export class CatService implements OnModuleInit {
   }
 
   async createTopBreed(breedId: string) {
-    const breed = await this.topBreedsRepository.createAndSave({
+    const breed = await this.topBreedsRepository.save(breedId, {
       breedId,
       timesSearched: 1,
     });
@@ -89,12 +88,12 @@ export class CatService implements OnModuleInit {
   }
 
   async incrementTopBreeds(breedId: string) {
-    if (!this.getTopBreed(breedId)) {
-      this.createTopBreed(breedId);
+    const topBreed = await this.getTopBreed(breedId);
+    if (!topBreed) {
+      return await this.createTopBreed(breedId);
     }
     const breed = await this.topBreedsRepository.fetch(breedId);
-    breed.timesSearched += 1;
-    breed.breedId = breedId;
+    (breed.timesSearched as number) += 1;
     await this.topBreedsRepository.save(breed);
     return breed;
   }

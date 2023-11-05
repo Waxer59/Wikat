@@ -8,7 +8,7 @@ import {
 } from '@nestjs/common';
 import { ApiProperty, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { CatService } from './cat.service';
-import { CacheInterceptor } from '@nestjs/common/cache';
+import { CacheInterceptor } from '@nestjs/cache-manager';
 import { ParseOptionalIntPipe } from '../common/pipes/parse-optional-int.pipe';
 import { IncrementBreedTimesViewedInterceptor } from '../common/interceptors/incrementBreedTimesViewed.interceptor';
 

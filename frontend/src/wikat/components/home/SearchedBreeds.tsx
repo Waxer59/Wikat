@@ -24,12 +24,12 @@ const SearchedBreeds: React.FC = () => {
 
           <Link
             to={'/topbreeds'}
-            className="flex items-center text-[18px] gap-[10px] text-[#29150799] cursor-pointer font-bold hidden sm:inline sm:flex">
-            SEE MORE <AiOutlineArrowRight />
+            className="flex items-center text-[18px] gap-[10px] text-[#29150799] cursor-pointer font-bold uppercase">
+            see more <AiOutlineArrowRight />
           </Link>
         </div>
         <ul className="flex sm:gap-[50px] gap-[15px] flex-wrap justify-evenly">
-          {breedData?.data != null &&
+          {breedData.data?.[0] != null &&
             breedData.data.map(({ breeds, url }, i: number) => (
               <SingleSearchedBreed
                 key={url}
