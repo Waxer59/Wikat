@@ -5,7 +5,7 @@ import {
   CallHandler,
 } from '@nestjs/common';
 import { Observable } from 'rxjs';
-import { CatService } from '../../cat/cat.service';
+import { CatsService } from '../../cats/cats.service';
 
 export interface Response<T> {
   data: T;
@@ -15,7 +15,7 @@ export interface Response<T> {
 export class IncrementBreedTimesViewedInterceptor<T>
   implements NestInterceptor<T, Response<T>>
 {
-  constructor(private readonly catService: CatService) {}
+  constructor(private readonly catsService: CatsService) {}
 
   intercept(
     context: ExecutionContext,
@@ -27,7 +27,7 @@ export class IncrementBreedTimesViewedInterceptor<T>
     const { params } = request;
     const { breed } = params;
 
-    this.catService.incrementTopBreeds(breed);
+    this.catsService.incrementTopBreeds(breed);
 
     return next.handle();
   }

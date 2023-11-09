@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom'
 const SearchedBreeds: React.FC = () => {
   const breedData = useQuery<Breed[]>(
     ['breedsImages'],
-    async () => await getCatData('/cat/breedsImages?limit=4')
+    async () => await getCatData('/cats/breedsImages?limit=4')
   )
 
   return (

@@ -37,7 +37,7 @@ const Breed: React.FC = () => {
 
   const breedData = useQuery<BreedData>([id], async () => {
     const [{ breeds, url, width, height }] = await getCatData(
-      `/cat/breed/${id}`
+      `/cats/breed/${id}`
     )
 
     breeds[0].life_span += ' years'
@@ -52,7 +52,7 @@ const Breed: React.FC = () => {
 
   const breedOtherPhotos = useQuery<BreedPhoto[]>(
     [`${id}-photos`],
-    async () => await getCatData(`/cat/breedPhotos/${id}?limit=8`)
+    async () => await getCatData(`/cats/breedImages/${id}?limit=8`)
   )
 
   const levelBars = (level: number = 0): JSX.Element => {

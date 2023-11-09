@@ -10,7 +10,7 @@ import { RedisClientService } from '../redis-client/redis-client.service';
 import { Repository } from 'redis-om';
 
 @Injectable()
-export class CatService implements OnModuleInit {
+export class CatsService implements OnModuleInit {
   private readonly topBreedsRepository: Repository;
 
   constructor(
@@ -36,7 +36,7 @@ export class CatService implements OnModuleInit {
     );
   }
 
-  async getBreedPhotos(breed: string, limit: number) {
+  async getBreedImages(breed: string, limit: number) {
     return await this.http.get(
       `/images/search?limit=${limit}&breed_ids=${breed}&has_breeds=0&size=small`,
     );

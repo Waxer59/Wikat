@@ -1,21 +1,14 @@
-import {
-  Controller,
-  Get,
-  Param,
-  ParseIntPipe,
-  Query,
-  UseInterceptors,
-} from '@nestjs/common';
+import { Controller, Get, Param, Query, UseInterceptors } from '@nestjs/common';
 import { ApiProperty, ApiResponse, ApiTags } from '@nestjs/swagger';
-import { CatService } from './cat.service';
+import { CatsService } from './cats.service';
 import { CacheInterceptor } from '@nestjs/cache-manager';
 import { ParseOptionalIntPipe } from '../common/pipes/parse-optional-int.pipe';
 import { IncrementBreedTimesViewedInterceptor } from '../common/interceptors/incrementBreedTimesViewed.interceptor';
 
-@Controller('cat')
-@ApiTags('Cat')
-export class CatController {
-  constructor(private readonly catService: CatService) {}
+@Controller('cats')
+@ApiTags('Cats')
+export class CatsController {
+  constructor(private readonly catsService: CatsService) {}
   @Get('breed/:breed')
   @UseInterceptors(IncrementBreedTimesViewedInterceptor, CacheInterceptor)
   @ApiResponse({
@@ -24,21 +17,21 @@ export class CatController {
   })
   @ApiProperty()
   getBreed(@Param('breed') breed: string) {
-    return this.catService.getBreed(breed);
+    return this.catsService.getBreed(breed);
   }
 
-  @Get('breedPhotos/:breed')
+  @Get('breedImages/:breed')
   @UseInterceptors(CacheInterceptor)
   @ApiProperty()
   @ApiResponse({
     status: 200,
     description: 'Breed photos',
   })
-  getBreedPhotos(
+  getBreedImages(
     @Param('breed') breed: string,
-    @Query('limit', ParseIntPipe) limit: number,
+    @Query('limit', ParseOptionalIntPipe) limit: number,
   ) {
-    return this.catService.getBreedPhotos(breed, limit);
+    return this.catsService.getBreedImages(breed, limit);
   }
 
   @Get('breedsImages')
@@ -52,7 +45,7 @@ export class CatController {
     @Query('limit', ParseOptionalIntPipe) limit?: number,
     @Query('info') info = '1',
   ) {
-    return this.catService.getBreedsImages(limit, info);
+    return this.catsService.getBreedsImages(limit, info);
   }
 
   @Get('breeds')
@@ -66,7 +59,7 @@ export class CatController {
     @Query('limit', ParseOptionalIntPipe) limit,
     @Query('filter') filterName = '',
   ) {
-    return this.catService.getBreeds(limit ?? '', filterName);
+    return this.catsService.getBreeds(limit ?? '', filterName);
   }
 
   @Get('/topBreeds')
@@ -79,6 +72,6 @@ export class CatController {
     @Query('limit', ParseOptionalIntPipe) limit,
     @Query('offset', ParseOptionalIntPipe) offset,
   ) {
-    return this.catService.getAllTopBreeds(limit, offset);
+    return this.catsService.getAllTopBreeds(limit, offset);
   }
 }

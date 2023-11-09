@@ -15,7 +15,7 @@ const SearchInput: React.FC = () => {
 
   useEffect(() => {
     const setQueryData = async () => {
-      const response = await getCatData(`/cat/breeds?filter=${debouncedValue}`)
+      const response = await getCatData(`/cats/breeds?filter=${debouncedValue}`)
       setQuery(response)
     }
     if (debouncedValue.trim().length > 0) {

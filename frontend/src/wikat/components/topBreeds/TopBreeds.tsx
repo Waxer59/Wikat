@@ -8,7 +8,7 @@ const TopBreeds: React.FC = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const topBreeds = await getCatData('/cat/topBreeds')
+      const topBreeds = await getCatData('/cats/topBreeds')
       setTopBreeds(topBreeds)
     }
     fetchData()
