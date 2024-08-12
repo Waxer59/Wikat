@@ -20,7 +20,7 @@ const TopBreeds: React.FC = () => {
         Top 10 most searched breeds
       </h2>
       <ul className="flex mt-[55px] gap-[55px] mb-[100px] flex-col">
-        {TopBreeds != null &&
+        {TopBreeds &&
           TopBreeds.map(([{ url, id, breeds }]: any, index: number) => (
             <TopBreedsItem
               img={url}

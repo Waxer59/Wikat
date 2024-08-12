@@ -49,7 +49,7 @@ const SearchInput: React.FC = () => {
               ? 'hidden'
               : ''
           }`}>
-          {query != null &&
+          {query &&
             query.map(({ name, id }) => (
               <Combobox.Option
                 key={id}

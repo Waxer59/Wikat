@@ -114,7 +114,7 @@ const Breed: React.FC = () => {
         <div className="font-[600] text-[36px] mt-[80px] min-h-[900px]">
           <h3>Other photos</h3>
           <ul className="flex gap-[46px] mt-[40px] mb-[177px] flex-wrap justify-center 3xl:justify-start">
-            {breedOtherPhotos?.data != null &&
+            {breedOtherPhotos?.data &&
               breedOtherPhotos.data.map(
                 ({ url, id, width, height }: BreedPhoto) => (
                   <BreedOtherPhotos

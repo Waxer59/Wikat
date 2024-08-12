@@ -29,7 +29,7 @@ const SearchedBreeds: React.FC = () => {
           </Link>
         </div>
         <ul className="flex sm:gap-[50px] gap-[15px] flex-wrap justify-evenly">
-          {breedData.data?.[0] != null &&
+          {breedData.data?.[0] &&
             breedData.data.map(({ breeds, url }, i: number) => (
               <SingleSearchedBreed
                 key={url}
